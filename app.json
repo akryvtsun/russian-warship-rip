@@ -2,7 +2,7 @@
   "configVersion": "v2",
   "app": {
     "appId": 22813,
-    "appName": "hello world",
+    "appName": "Russian Troops Losses",
     "appType": "app",
     "version": {
       "code": 1,
@@ -31,7 +31,7 @@
           "window": {
             "navigationBarBackgroundColor": "#ffffff",
             "navigationBarTextStyle": "black",
-            "navigationBarTitleText": "Hello World",
+            "navigationBarTitleText": "Russian Troops Losses",
             "backgroundColor": "#eeeeee",
             "backgroundTextStyle": "light"
           }
@@ -64,7 +64,7 @@
           "window": {
             "navigationBarBackgroundColor": "#ffffff",
             "navigationBarTextStyle": "black",
-            "navigationBarTitleText": "Hello World",
+            "navigationBarTitleText": "Russian Troops Losses",
             "backgroundColor": "#eeeeee",
             "backgroundTextStyle": "light"
           }
@@ -105,7 +105,7 @@
           "window": {
             "navigationBarBackgroundColor": "#ffffff",
             "navigationBarTextStyle": "black",
-            "navigationBarTitleText": "Hello World",
+            "navigationBarTitleText": "Russian Troops Losses",
             "backgroundColor": "#eeeeee",
             "backgroundTextStyle": "light"
           }
@@ -138,7 +138,7 @@
           "window": {
             "navigationBarBackgroundColor": "#ffffff",
             "navigationBarTextStyle": "black",
-            "navigationBarTitleText": "Hello World",
+            "navigationBarTitleText": "Russian Troops Losses",
             "backgroundColor": "#eeeeee",
             "backgroundTextStyle": "light"
           }
@@ -165,7 +165,7 @@
   },
   "i18n": {
     "en-US": {
-      "appName": "Hello World"
+      "appName": "Russian Troops Losses"
     }
   },
   "defaultLanguage": "en-US"

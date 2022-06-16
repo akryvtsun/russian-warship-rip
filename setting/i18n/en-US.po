@@ -1,2 +1,2 @@
 msgid "appName"
-msgstr "HelloWorld"
+msgstr "Hello.World"
