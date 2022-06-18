@@ -1,3 +1,2 @@
-
 msgid "appName"
-msgstr "HelloWorld"
+msgstr "Russian Losses in Ukraine"

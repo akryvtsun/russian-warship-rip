@@ -2,15 +2,15 @@
   "configVersion": "v2",
   "app": {
     "appId": 22813,
-    "appName": "Russian Troops Losses",
+    "appName": "Russian Losses in Ukraine",
     "appType": "app",
     "version": {
       "code": 1,
       "name": "1.0.1"
     },
     "icon": "icon.png",
-    "vender": "zepp",
-    "description": "hello world app"
+    "vender": "akryvtsun",
+    "description": "Russian Troops Losses in Ukraine"
   },
   "permissions": [],
   "runtime": {
@@ -165,7 +165,7 @@
   },
   "i18n": {
     "en-US": {
-      "appName": "Russian Troops Losses"
+      "appName": "Russian Losses in Ukraine"
     }
   },
   "defaultLanguage": "en-US"
