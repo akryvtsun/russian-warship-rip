@@ -1,6 +1,8 @@
-import {TEXT_STYLE} from './index.style'
+import { TEXT_STYLE } from './index.style'
 
 const logger = DeviceRuntimeCore.HmLogger.getLogger('helloworld')
+
+let { widget } = getApp()._options.globalData
 
 Page({
     onInit() {
@@ -9,12 +11,22 @@ Page({
 
     build() {
         logger.debug('page build invoked')
-        const text = hmUI.createWidget(hmUI.widget.TEXT, {
+
+        widget = hmUI.createWidget(hmUI.widget.TEXT, {
             ...TEXT_STYLE,
         })
-        text.setProperty(hmUI.prop.MORE, {
-            text: "device 1 Name 22 device 333 Name 444 device 555 Name 666 device 777 Name device 1 Name 22 device 333 Name 444 device 555 Name 666 device 777 Name device 1 Name 22 device 333 Name 444 device 555 Name 666 device 777 Name device 1 Name 22 device 333 Name 444 device 555 Name 666 device 777 Name",
+        widget.setProperty(hmUI.prop.MORE, {
+            text: "data ".repeat(40)
         })
+
+        setTimeout(function () {
+            widget.setProperty(hmUI.prop.MORE, {
+                text: "data request sent: " + hmBle.connectStatus()
+            })
+
+            let buf = Buffer.from('message')
+            hmBle.send(buf.buffer, buf.byteLength);
+        }, 3000);
     },
 
     onDestroy() {

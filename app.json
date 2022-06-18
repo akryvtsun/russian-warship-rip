@@ -12,7 +12,9 @@
     "vender": "akryvtsun",
     "description": "Russian Troops Losses in Ukraine"
   },
-  "permissions": [],
+  "permissions": [
+    "network"
+  ],
   "runtime": {
     "apiVersion": {
       "compatible": "1.0.0",
