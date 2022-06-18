@@ -128,39 +128,6 @@
         }
       ],
       "designWidth": 390
-    },
-    "teide": {
-      "module": {
-        "page": {
-          "pages": [
-            "page/t-rex2/home/index.page"
-          ],
-          "window": {
-            "navigationBarBackgroundColor": "#ffffff",
-            "navigationBarTextStyle": "black",
-            "navigationBarTitleText": "Russian Troops Losses",
-            "backgroundColor": "#eeeeee",
-            "backgroundTextStyle": "light"
-          }
-        },
-        "app-side": {
-          "path": "app-side/index"
-        },
-        "setting": {
-          "path": "setting/index"
-        }
-      },
-      "platforms": [
-        {
-          "name": "t-rex2",
-          "deviceSource": 418
-        },
-        {
-          "name": "t-rex2-w",
-          "deviceSource": 419
-        }
-      ],
-      "designWidth": 454
     }
   },
   "i18n": {
