@@ -22,11 +22,11 @@
   },
   "debug": true,
   "targets": {
-    "gts3": {
+    "gts-3": {
       "module": {
         "page": {
           "pages": [
-            "page/gts3/home/index.page"
+            "page/gts-3/home/index.page"
           ],
           "window": {
             "navigationBarBackgroundColor": "#ffffff",
@@ -45,11 +45,11 @@
       },
       "platforms": [
         {
-          "name": "gts3",
+          "name": "gts-3",
           "deviceSource": 224
         },
         {
-          "name": "gts3-w",
+          "name": "gts-3-w",
           "deviceSource": 225
         }
       ],
