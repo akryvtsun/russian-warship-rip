@@ -20,7 +20,7 @@
       "minVersion": "1.0.0"
     }
   },
-  "debug": false,
+  "debug": true,
   "targets": {
     "gtr3-pro": {
       "module": {
