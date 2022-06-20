@@ -1,21 +1,28 @@
+import './shared/device-polyfill'
+import { MessageBuilder } from './shared/message'
+
+const appDevicePort = 20
+const appSidePort = 0
+const appId = 20001
+
+const messageBuilder = new MessageBuilder({
+    appId,
+    appDevicePort,
+    appSidePort,
+})
+
 App({
     globalData: {
-        widget: null
+        messageBuilder: messageBuilder,
     },
 
     onCreate(options) {
         console.log('app on create invoke')
-
-        hmBle.createConnect(function (index, data, size) {
-
-            getApp()._options.globalData.widget.setProperty(hmUI.prop.MORE, {
-                text: "DATA RECEIVED"
-            })
-        })
+        messageBuilder.connect()
     },
 
     onDestroy(options) {
         console.log('app on destroy invoke')
-        hmBle.disConnect()
+        messageBuilder.disConnect()
     }
 })

@@ -1,8 +1,8 @@
-import { TEXT_STYLE } from './index.style'
+import {TEXT_STYLE} from './index.style'
 
 const logger = DeviceRuntimeCore.HmLogger.getLogger('helloworld')
 
-let { widget } = getApp()._options.globalData
+const { messageBuilder } = getApp()._options.globalData
 
 Page({
     onInit() {
@@ -12,21 +12,26 @@ Page({
     build() {
         logger.debug('page build invoked')
 
-        widget = hmUI.createWidget(hmUI.widget.TEXT, {
+        let widget = hmUI.createWidget(hmUI.widget.TEXT, {
             ...TEXT_STYLE,
         })
         widget.setProperty(hmUI.prop.MORE, {
             text: "data ".repeat(40)
         })
 
-        setTimeout(function () {
-            widget.setProperty(hmUI.prop.MORE, {
-                text: "data request sent: " + hmBle.connectStatus()
+        messageBuilder
+            .request({
+                jsonrpc: 'hmrpcv2',
+                method: 'GET_TODO_LIST',
+                params: {},
             })
-
-            let buf = Buffer.from('message')
-            hmBle.send(buf.buffer, buf.byteLength);
-        }, 3000);
+            .then(({result}) => {
+                widget.setProperty(hmUI.prop.MORE, {
+                    text: result
+                })
+            })
+            .catch((res) => {
+            })
     },
 
     onDestroy() {
