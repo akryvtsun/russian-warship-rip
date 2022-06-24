@@ -1,18 +1,27 @@
-import {TEXT_STYLE} from './index.style'
+import { TEXT_STYLE } from './index.style'
 
-const logger = DeviceRuntimeCore.HmLogger.getLogger('helloworld')
+const logger = DeviceRuntimeCore.HmLogger.getLogger('russian-warship-rip')
 
 const { messageBuilder } = getApp()._options.globalData
 
+let widget
+
 Page({
     onInit() {
-        logger.debug('page onInit invoked')
+        logger.log('page onInit invoked')
+
+        messageBuilder.on('call', ({ payload: buf }) => {
+            const json = messageBuilder.buf2Json(buf)
+            widget.setProperty(hmUI.prop.MORE, {
+                text: json
+            })
+        })
     },
 
     build() {
-        logger.debug('page build invoked')
+        logger.log('page build invoked')
 
-        let widget = hmUI.createWidget(hmUI.widget.TEXT, {
+        widget = hmUI.createWidget(hmUI.widget.TEXT, {
             ...TEXT_STYLE,
         })
         widget.setProperty(hmUI.prop.MORE, {
@@ -30,11 +39,10 @@ Page({
                     text: result
                 })
             })
-            .catch((res) => {
-            })
+            .catch((res) => {})
     },
 
     onDestroy() {
-        logger.debug('page onDestroy invoked')
+        logger.log('page onDestroy invoked')
     },
 })

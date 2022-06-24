@@ -1,6 +1,8 @@
 import './shared/device-polyfill'
 import { MessageBuilder } from './shared/message'
 
+const logger = DeviceRuntimeCore.HmLogger.getLogger('russian-warship-rip')
+
 const appDevicePort = 20
 const appSidePort = 0
 const appId = 20001
@@ -17,12 +19,12 @@ App({
     },
 
     onCreate(options) {
-        console.log('app on create invoke')
+        logger.log('app on create invoke')
         messageBuilder.connect()
     },
 
     onDestroy(options) {
-        console.log('app on destroy invoke')
+        logger.log('app on destroy invoke')
         messageBuilder.disConnect()
     }
 })

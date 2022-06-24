@@ -1,29 +1,31 @@
-//import { MessageBuilder } from '../shared/message'
+import { MessageBuilder } from '../shared/message'
 
-//const messageBuilder = new MessageBuilder()
-const { messageBuilder } = getApp()._options.globalData
+const messageBuilder = new MessageBuilder()
+
+const logger = DeviceRuntimeCore.HmLogger.getLogger('russian-warship-rip')
 
 AppSideService({
     onInit() {
-        console.log('app side service invoke onInit')
+        logger.log('app side service invoke onInit')
 
-        messageBuilder.listen(() => {
-        })
+        messageBuilder.call('TEST DATA FROM CALL')
+
+        messageBuilder.listen(() => {})
         messageBuilder.on('request', (ctx) => {
             const jsonRpc = messageBuilder.buf2Json(ctx.request.payload)
             if (jsonRpc.method === 'GET_TODO_LIST') {
                 ctx.response({
-                    data: {jsonrpc: 'hmrpcv1', result: "TEST DATA"},
+                    data: {jsonrpc: 'hmrpcv1', result: 'TEST DATA'},
                 })
             }
         })
     },
 
     onRun() {
-        console.log('app side service invoke onRun')
+        logger.log('app side service invoke onRun')
     },
 
     onDestroy() {
-        console.log('app side service invoke onDestroy')
+        logger.log('app side service invoke onDestroy')
     }
 })
