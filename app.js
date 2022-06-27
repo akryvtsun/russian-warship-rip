@@ -5,7 +5,7 @@ const logger = DeviceRuntimeCore.HmLogger.getLogger('russian-warship-rip')
 
 const appDevicePort = 20
 const appSidePort = 0
-const appId = 20001
+const appId = 22813
 
 const messageBuilder = new MessageBuilder({
     appId,

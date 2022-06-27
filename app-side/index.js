@@ -2,7 +2,7 @@ import { MessageBuilder } from '../shared/message'
 
 const messageBuilder = new MessageBuilder()
 
-const logger = DeviceRuntimeCore.HmLogger.getLogger('russian-warship-rip')
+const logger = Logger.getLogger('russian-warship-rip')
 
 AppSideService({
     onInit() {
